@@ -1,0 +1,25 @@
+<section class="return">
+  <button mat-flat-button color="primary"  routerLink="/client">Voltar</button>
+</section>
+<section class="detail-content">
+  <div class="client-detail" *ngFor="let item of clientDetail">
+    <div class="image-client-detail">
+      <img src="{{item.image_src}}" />
+    </div>
+    <div class="desc-client-detail">
+      <h2>Id. {{item._id}}</h2>
+      <h3>Cliente: {{item.name}}</h3>
+      <h4>Qtde Empreendimentos: {{item.enterprises}}</h4>
+      <h4>Qtde Unidade: {{item.realties}}</h4>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <div class="card" *ngFor="let item of enterprises">
+      <img src="{{item.image_src}}" />
+      <h3>{{item.name}}</h3>
+      <h4>Unidades: {{item.realties}}</h4>
+    </div>
+  </div>
+
+</section>

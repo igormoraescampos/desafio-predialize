@@ -1,0 +1,52 @@
+<section class="totals" *ngFor="let item of totals">
+  <div class="box-total">
+    <div class="box-total-header">
+      <h3>Total de Empreendimentos</h3>
+    </div>
+    <div class="box-total-value">
+      <h1>{{item.enterprises}}</h1>
+    </div>
+  </div>
+  <div class="box-total">
+    <div class="box-total-header">
+      <h3>Total de Unidades</h3>
+    </div>
+    <div class="box-total-value">
+      <h1>{{item.realties}}</h1>
+    </div>
+  </div>
+</section>
+<div class="mat-elevation-z0">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Busca por Empreendimento" #input>
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Empreendimento </th>
+      <td mat-cell *matCellDef="let element"> <img src="{{element.image_src}}" style="width: 40px; height: auto;" > </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome do Empreendimento </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="realties">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Qtde Unidades </th>
+      <td mat-cell *matCellDef="let element"> {{element.realties}} </td>
+    </ng-container>
+    <ng-container matColumnDef="client">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Cliente </th>
+      <td mat-cell *matCellDef="let element"> {{element.client}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">Nenhum dado encontrado para "{{input.value}}"</td>
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator>
+</div>

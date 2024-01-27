@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  api-desafio-predialize:
+    image: api-desafio-predialize
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 3000:3000
