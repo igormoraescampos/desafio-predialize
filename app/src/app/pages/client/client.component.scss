@@ -1,6 +1,6 @@
 .totals {
   width: 90%;
-  height: 120px;
+  min-height: 120px;
   margin: 20px auto 0 auto;
   display: flex;
   flex-direction: row;
@@ -15,13 +15,19 @@
   width: 250px;
   min-height: 100px;
   background-color: rgb(231, 231, 231);
-  border: 1px dotted #aaaaaa;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   text-align: center;
+  box-shadow: 1px 1px 1px 1px rgb(224, 224, 224);
+}
+
+@media (max-width: 600px) {
+  .box-total {
+    margin-top: 20px;
+  }
 }
 
 .box-total-header {
@@ -60,6 +66,21 @@
   padding-left: 20px;
 }
 
+.mat-form-field {
+  background-color: rgb(231, 231, 231);
+  padding: 0 20px 0 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgb(224, 224, 224);
+}
+
+@media (max-width: 600px) {
+  .mat-form-field {
+    width: 95%;
+    padding: 0 10px 0 10px;
+    margin-top: 30px;
+  }
+}
+
 table {
   width: 100%;
   margin: 20px auto;
@@ -75,28 +96,109 @@ table th {
 }
 
 .mat-column-id {
-  width: 50px;
   padding-right: 24px;
   text-align: center;
   border-right: 1px dotted currentColor;
 }
 
+.th-id {
+  width: 50px;
+  height: 60px;
+}
+
+.th-id p{
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .mat-column-id {
+    display: none !important;
+  }
+}
+
 .mat-column-image {
-  width: 100px;
   text-align: center;
   border-right: 1px dotted currentColor;
+}
+
+.th-image {
+  width: 100px;
+  height: 60px;
+}
+
+.th-image p{
+  font-size: 1em;
+  margin-left: 25px;
+}
+
+@media (max-width: 600px) {
+  .mat-column-image {
+    text-align: center;
+  }
+
+  .th-image {
+    width: 40px;
+    height: 60px;
+  }
+
+  .th-image p{
+    font-size: 0.9em;
+    margin-left: -30px;
+  }
 }
 
 .mat-column-name {
-  width: 400px;
   text-align: center;
   border-right: 1px dotted currentColor;
 }
 
+.th-name {
+  width: 400px;
+  height: 60px;
+}
+
+.th-name p{
+  font-size: 1em;
+  margin-left: 190px;
+}
+
+@media (max-width: 600px) {
+  .mat-column-name {
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+  .th-name {
+    width: 140px;
+    height: 60px;
+  }
+
+  .th-name p{
+    font-size: 0.9em;
+    margin-left: -10px;
+  }
+}
+
 .mat-column-enterprises {
-  width: 100px;
   text-align: center;
   border-right: 1px dotted currentColor;
+}
+
+.th-enterprises {
+  width: 100px;
+  height: 60px;
+}
+
+.th-enterprises p{
+  font-size: 1em;
+  // margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .mat-column-enterprises {
+    display: none !important;
+  }
 }
 
 .mat-column-realties {
@@ -105,8 +207,53 @@ table th {
   border-right: 1px dotted currentColor;
 }
 
-.mat-column-details {
+.th-realties {
   width: 100px;
+  height: 60px;
+}
+
+.th-realties p{
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .mat-column-realties {
+    display: none !important;
+  }
+}
+
+.mat-column-details {
   padding-left: 24px;
   text-align: center;
+}
+
+.th-details {
+  width: 100px;
+  height: 60px;
+}
+
+.th-details p{
+  font-size: 1em;
+  margin-left: 20px;
+}
+
+@media (max-width: 600px) {
+  .mat-column-details {
+    text-align: center;
+  }
+
+  .th-details {
+    width: 40px;
+    height: 60px;
+  }
+
+  .th-details p{
+    font-size: 0.9em;
+    margin-left: -30px;
+  }
+
+  .mat-icon {
+    font-size: 1.4em;
+  }
 }

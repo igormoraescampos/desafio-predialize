@@ -26,46 +26,44 @@
 </section>
 <div class="mat-elevation-z0">
   <mat-form-field>
-    <mat-label>Filter</mat-label>
+    <mat-label>Buscar</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Busca por Cliente" #input>
   </mat-form-field>
   <table mat-table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="th-id"><p>Id</p></th>
       <td mat-cell *matCellDef="let element"> {{element._id}} </td>
     </ng-container>
     <ng-container matColumnDef="image">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> clientes </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="th-image"><p>clientes</p></th>
       <td mat-cell *matCellDef="let element"> <img src="{{element.image_src}}" style="width: 40px; height: auto;" > </td>
     </ng-container>
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome do Cliente </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="th-name"><p>Nome do Cliente</p></th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
     <ng-container matColumnDef="enterprises">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Qtde Empreend. </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="th-enterprises"><p>Qtde Empreend.</p></th>
       <td mat-cell *matCellDef="let element"> {{element.enterprises}} </td>
     </ng-container>
     <ng-container matColumnDef="realties">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Qtde Unidades </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="th-realties"><p>Qtde Unidades</p></th>
       <td mat-cell *matCellDef="let element"> {{element.realties}} </td>
     </ng-container>
     <ng-container matColumnDef="details">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Detalhes </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="th-details"><p>Detalhes</p></th>
       <td mat-cell *matCellDef="let element">
         <button mat-icon-button routerLink="{{element._id}}">
-          <mat-icon>more_vert</mat-icon>
+          <mat-icon>search</mat-icon>
         </button>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
-
-    <!-- Row shown when there is no matching data. -->
     <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      <td class="mat-cell" colspan="4">Nenhum dado encontrado para "{{input.value}}"</td>
     </tr>
   </table>
-  <mat-paginator [pageSizeOptions]="[5, 10]" aria-label="Select page of elements"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator>
 </div>
 
